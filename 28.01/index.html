@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>fwqef</h1>
+    <script>
+        // 
+        const url = 'https://api.nasa.gov/planetary/apod?api_key=Jur1b1xkKOkenNuro0eVFrchFmdM932ZhH6bPT91';
+        // 
+        function createNode(element) {
+                return document.createElement(element);
+            }       
+            function append(parent, el) {
+	            return parent.appendChild(el);
+            }
+        //
+        const data = fetch(url)
+        .then( (response) => response.json() )
+        .then( (data) => {
+            var createHeader = document.createElement("h1", id = "header-id");
+            var createDescription = document.createElement("p", id = "description-id");
+            var createImage = document.createElement("img", id = "image-id");
+            var createDate = document.createElement("p", id = "date-id");
+
+            createImage.src = data.url;
+            console.log(data);
+            createHeader.innerHTML = data.title
+            createDescription.innerHTML = data.explanation
+            createDate.innerHTML = data.date
+
+            document.body.appendChild(createHeader);
+            document.body.appendChild(createDescription);
+            document.body.appendChild(createDate);
+
+        } )
+    </script>
+</body>
+</html>
