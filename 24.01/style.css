@@ -1,0 +1,15 @@
+body {
+    background-color: green;
+    height: 100%;
+    width: 100%;
+}
+
+.button-create{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: red;
+    color: rgb(83, 3, 3);
+    width: 100px;
+    height: 40px;
+}
